@@ -20,8 +20,8 @@ pipeline {
             usernameVariable:'dockerUser',passwordVariable:'dockerPassword')]){
                 sh ('docker login -u ${dockerUser} -p ${dockerPassword}')
                 echo "docker login successful"
-                sh 'docker tag streamlit:latest ${dockerUser}/devopstraning:latest'
-                sh 'docker push ${dockerUser}/devopstraning:latest'
+                sh 'docker tag streamlit:latest ramakrishnadevarakonda/devopstraning:latest'
+                sh 'docker push ramakrishnadevarakonda/devopstraning:latest'
             }
             
         }    
