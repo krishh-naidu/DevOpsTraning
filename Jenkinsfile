@@ -17,8 +17,8 @@ pipeline {
         stage("Push to Docker Registry"){
             steps {
             withCredentials([usernamePassword(credentialsId:"dockerHubAccount",
-            usernameVariable:"dockerUser",passwordVariable:"dockerPassword")]){
-                sh ("docker login -u ${dockerUser} -p ${dockerPassword}")
+            usernameVariable:'dockerUser',passwordVariable:'dockerPassword')]){
+                sh ('docker login -u ${dockerUser} -p ${dockerPassword}')
                 echo "docker login successful"
             }
             
