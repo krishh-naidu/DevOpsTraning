@@ -1,6 +1,5 @@
 node {
         def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
-        stages('SonarQube Analysis') {
             stage ('scan'){
               steps {
                 withSonarQubeEnv(installationName: 'SonarQubeServer') {
@@ -10,4 +9,3 @@ node {
               }
           }
     }
-}
