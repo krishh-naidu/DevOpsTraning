@@ -3,11 +3,9 @@ pipeline {
         def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
         stages('SonarQube Analysis') {
             stage ('scan'){
-              environment {
-                
-                }
               steps {
                 withSonarQubeEnv(installationName: 'SonarQubeServer') {
+                    sh "${scannerHome}/bin/sonar-scanner"
                     echo "sonar connection completed"
                 }
               }
