@@ -2,45 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage ("Image Prune"){
-            steps{
-                sh "docker image prune -f"
+        stage('Git Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/krishh-naidu/DevOpsTraning.git']])
+                echo 'Git Checkout Completed'
             }
         }
-        stage ("Test") {
-            steps {
-                echo "Testing Docker connection"
-                sh "docker images"
+
+        stage('SonarQube Analysis') {
+              environment {
+                scannerHome = tool 'SonarQubeScanner';
             }
-        }  
-        stage("Push to Docker Registry")
-        {
-            steps 
-            {
-            withCredentials([usernamePassword(credentialsId:"dockerHubAccount",
-            usernameVariable:"dockerUser",passwordVariable:"dockerPassword")])
-            {
-                sh "docker login -u $dockerUser -p $dockerPassword"
-                echo "docker images are pushed successful"
-            }
-            }    
-        }
-        stage('SonarQube Code Analysis') {
-            steps {
-                dir("${WORKSPACE}"){
-                // Run SonarQube analysis for Python
-                script {
-                    def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    withSonarQubeEnv(credentialsId: 'SonarQubeToken') {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                        echo "sonarqube connection successful"
-                    }
+              steps {
+                withSonarQubeEnv(credentialsId: 'SonarQubeToken', installationName: 'SonarQubeServer') {
+                  sh "${scannerHome}/bin/sonar-scanner"
                 }
-            }
-            }
-       }
-        
-        
-        
+              }
+          }
     }
 }
