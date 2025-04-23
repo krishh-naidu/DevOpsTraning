@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
-        stage('SonarQube Analysis') {
+        stages('SonarQube Analysis') {
+            stage ('scan'){
               environment {
                 scannerHome = tool 'SonarQubeScanner';
-            }
+                }
               steps {
                 withSonarQubeEnv(installationName: 'SonarQubeServer') {
                     echo "sonar connection completed"
@@ -12,3 +13,4 @@ pipeline {
               }
           }
     }
+}
