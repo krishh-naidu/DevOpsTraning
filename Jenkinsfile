@@ -7,7 +7,7 @@ pipeline {
                 }
               steps {
                 withSonarQubeEnv(installationName: 'SonarQubeServer') {
-                    sh "${scannerHome}/bin/SonarQubeScanner"
+                    sh "${scannerHome}/bin/"
                     echo "sonar connection completed"
                 }
               }
