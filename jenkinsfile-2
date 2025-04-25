@@ -1,0 +1,6 @@
+node{
+stage('ansible deploy'){
+  ansiblePlaybook inventory: 'hosts', playbook" 'deploy.yml'
+
+}
+}
