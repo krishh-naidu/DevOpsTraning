@@ -14,16 +14,15 @@ node {
             sh "docker login -u $dockerUser -p $dockerPassword"
             echo "docker images are pushed successful"
         }
-    }  
+    } 
+    stage('SCM'){
+        checkout scm
+    }
     stage('SonarQube Analysis') {
         withSonarQubeEnv() {
         sh "${scannerHome}/bin/sonar-scanner"
         }
     }
-    stage('SCM'){
-        checkout scm
-    }
-
     stage('ansible inventory'){
         ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yml'
     
