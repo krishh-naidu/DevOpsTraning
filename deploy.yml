@@ -29,8 +29,7 @@
 
     - name: Create Docker container
       docker container:
-        
-        name: docker pipeline
+        name: docker-pipeline
         iamge: ramakrishnadevarakonda/streamlit:latest
         state: started
         recreate: yes
