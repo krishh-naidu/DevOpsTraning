@@ -28,7 +28,7 @@
         state: present
 
     - name: Create Docker container
-      docker container:
+      docker_container:
         name: docker-pipeline
         iamge: ramakrishnadevarakonda/streamlit:latest
         state: started
