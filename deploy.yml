@@ -31,7 +31,7 @@
       docker container:
         
         name: docker pipeline
-        iamge: 
+        iamge: ramakrishnadevarakonda/streamlit:latest
         state: started
         recreate: yes
         exposed_ports:
