@@ -1,0 +1,38 @@
+- hosts: webservers
+  gather_facts: no
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Instsll Docker and dependencies
+      apt:
+        name: python3-pip, docker.io
+        state: present
+    
+    - name: start docker service
+      apt:
+        name: docker
+        state: started
+    
+    - name: list docker images
+      apt:
+        name: docker images
+        state: done
+    
+    - name: Instsll Docker pthon module
+      apt:
+        name: docker
+    
+    - name: Instsll Docker and dependencies
+      apt:
+        name: python3-pip, docker.io
+        state: present
+
+    - name: Create Docker container
+      docker container:
+        
+        name: docker pipeline
+        iamge: 
+        state: started
+        recreate: yes
+        exposed_ports:
+          -  "8080:8080"
