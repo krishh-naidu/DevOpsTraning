@@ -20,6 +20,10 @@ node {
         sh "${scannerHome}/bin/sonar-scanner"
         }
     }
+    stage('SCM'){
+        checkout scm
+    }
+
     stage('ansible inventory'){
         ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yml'
     
