@@ -2,8 +2,6 @@
   gather_facts: no
   remote_user: ramakriSHNadevarakonda
   become: true
-  become_method: su
-  become_user: nobody
   
   tasks:
     - name: Instsll Docker and dependencies
