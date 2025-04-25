@@ -1,7 +1,8 @@
 - hosts: webservers
   gather_facts: no
   remote_user: ramakriSHNadevarakonda
-  become: su
+  become: true
+  become_method: su
   
   tasks:
     - name: Instsll Docker and dependencies
