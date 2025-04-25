@@ -1,7 +1,9 @@
 - hosts: webservers
   gather_facts: no
   remote_user: ramakriSHNadevarakonda
-  become: yes
+  become: true
+  become_user: apache
+  
   tasks:
     - name: Instsll Docker and dependencies
       apt:
