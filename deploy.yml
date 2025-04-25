@@ -1,6 +1,6 @@
 - hosts: webservers
   gather_facts: no
-  remote_user: ramakrishnadevarakonda
+  remote_user: root
   become: yes
   tasks:
     - name: Instsll Docker and dependencies
