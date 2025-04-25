@@ -16,9 +16,13 @@ node {
         }
     }  
     stage('SonarQube Analysis') {
-        withSonarQubeEnv(credentialsId: 'SonarQubeToken', installationName: 'SonarQubeServer') {
+        withSonarQubeEnv() {
         sh "${scannerHome}/bin/sonar-scanner"
         }
+    }
+    stage('ansible inventory'{
+        ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yml'
+    
     }
 
 }
