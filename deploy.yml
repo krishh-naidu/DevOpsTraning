@@ -4,6 +4,7 @@
   become: yes
   connection: local
   gather_facts: false
+  become_method: sudo
   
   tasks:
     - name: Instsll Docker and dependencies
