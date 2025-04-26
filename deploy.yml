@@ -3,6 +3,7 @@
   remote_user: root
   become: true
   connection: local
+  gather_facts: false
   
   tasks:
     - name: Instsll Docker and dependencies
