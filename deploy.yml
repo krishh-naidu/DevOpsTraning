@@ -22,11 +22,6 @@
     - name: Instsll Docker pthon module
       apt:
         name: docker
-    
-    - name: Instsll Docker and dependencies
-      apt:
-        name: python3-pip, docker.io
-        state: present
 
     - name: Create Docker container
       docker_container:
