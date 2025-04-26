@@ -1,3 +1,4 @@
+a
 - hosts: webservers
   gather_facts: no
   remote_user: root
@@ -9,7 +10,7 @@
   tasks:
     - name: Instsll Docker and dependencies
       apt:
-        name: python3.8-pip, docker.io
+        name: python3.8-pip, python-brew, docker.io
         state: present
     
     - name: start docker service
