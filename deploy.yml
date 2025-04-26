@@ -1,4 +1,3 @@
-a
 - hosts: webservers
   gather_facts: no
   remote_user: root
