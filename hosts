@@ -1,6 +1,3 @@
 [webservers]
 192.168.12.220
 
-ansible_user=root  # ssh login user
-ansible_become=yes  # use sudo 
-ansible_become_method=sudo 
