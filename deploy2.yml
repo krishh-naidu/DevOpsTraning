@@ -1,8 +1,8 @@
-ansible-playbook deploy2.yml --ask-become-pass
+
 - hosts: webservers
   gather_facts: no
   remote_user: root
-  become: false
+  ansible_become: true
   connection: local
   sude: yes
 
