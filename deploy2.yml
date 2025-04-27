@@ -4,6 +4,7 @@
   become: yes
   connection: local
   sude: yes
+  ask-become: pass 
 
   tasks:
    - name: Ping my hosts
