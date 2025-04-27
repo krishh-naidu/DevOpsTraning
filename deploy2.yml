@@ -3,9 +3,6 @@
   gather_facts: no
   remote_user: root
   ansible_become: true
-  connection: local
-  sude: yes
-  sudo_user: root
 
   tasks:
    - name: Ping my hosts
