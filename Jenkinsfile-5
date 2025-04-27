@@ -1,0 +1,23 @@
+node {
+    def scannerHome = tool 'SonarQubeScanner';
+    stage ("Image Prune"){
+        sh "docker image prune -f"
+    }
+    stage ("Test") {
+        echo "Testing Docker connection"
+        sh "docker images"
+    }
+    stage("Push to Docker Registry"){
+        withCredentials([usernamePassword(credentialsId:"dockerHubAccount",
+        usernameVariable:"dockerUser",passwordVariable:"dockerPassword")])
+        {
+            sh "docker login -u $dockerUser -p $dockerPassword"
+            echo "docker images are pushed successful"
+        }
+    } 
+    stage('ansible inventory'){
+        ansiblePlaybook inventory: 'hosts', playbook: 'deploy2.yml'
+    
+    }
+
+}
