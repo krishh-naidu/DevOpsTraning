@@ -5,6 +5,7 @@
   ansible_become: true
   connection: local
   sude: yes
+  sudo_user: root
 
   tasks:
    - name: Ping my hosts
