@@ -2,7 +2,7 @@
   gather_facts: no
   remote_user: root
   become: false
-  gather_facts: false
+  gather_facts: true
   connection: local
   
   tasks:
