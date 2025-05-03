@@ -24,7 +24,8 @@ node {
         }
     }
     stage('ansible inventory'){
-        ansiblePlaybook inventory: 'hosts', playbook: 'deploy1.yml'
+        ansiblePlaybook inventory: 'hosts'
+        playbook: 'deploy1.yml'
     
     }
 
