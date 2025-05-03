@@ -8,7 +8,7 @@
   tasks:
     - name: Instsll Docker and dependencies
       apt:
-        name: python3.8-pip, python-brew, docker.io
+        name: docker.io
         state: present
     
     - name: start docker service
