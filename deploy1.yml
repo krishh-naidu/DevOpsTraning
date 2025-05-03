@@ -1,7 +1,7 @@
 - hosts: webservers
   gather_facts: no
   remote_user: root
-  become: yes
+  become: false
   gather_facts: false
   connection: local
   
