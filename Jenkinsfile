@@ -34,7 +34,8 @@ pipeline {
             }
             steps {
                 sh 'echo $secret_text_example'
-                sh 'echo $username_password_example'
+                sh 'echo password is $username_password_example_PSW'
+                sh 'echo the username is $username_password_example_USR'
                 
             }
         }
