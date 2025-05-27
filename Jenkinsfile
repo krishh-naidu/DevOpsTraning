@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 echo "$global_env"
-                echo "${environment.test_local_env}"
+                echo "${env.test_local_env}"
             }
         }
     }
