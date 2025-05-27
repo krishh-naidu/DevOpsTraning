@@ -1,11 +1,13 @@
 pipeline {
     agent any
+    // Declare pipeline environment variables globally
     environment {
         global_env = "this is global environment variable"
     }
 
     stages {
         stage ("Build") {
+            // Declare pipeline environment variables locally or at stage level
             environment {
                build_local_env = "this is local environment variable from BUILD STAGE"
             }
@@ -15,6 +17,7 @@ pipeline {
             }
         }
          stage ("Test") {
+            // Declare pipeline environment variables locally or at stage level
             environment {
                test_local_env = "this is local environment variable from TEST STAGE"
             }
