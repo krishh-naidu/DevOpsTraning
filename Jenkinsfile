@@ -16,7 +16,7 @@ pipeline {
                 echo "${build_local_env}"
             }
         }
-         stage ("Test") {
+        stage ("Test") {
             // Declare pipeline environment variables locally or at stage level
             environment {
                test_local_env = "this is local environment variable from TEST STAGE"
@@ -24,6 +24,15 @@ pipeline {
             steps {
                 echo "$global_env"
                 echo "${env.test_local_env}"
+            }
+        }
+        stage ("Release") {
+            // Declare pipeline environment variables locally or at stage level
+            environment {
+                 SAMPLE_ENV = credentials("simple-secret-text")
+            }
+            steps {
+               sh 'example --secret $SAMPLE_ENV'
             }
         }
     }
