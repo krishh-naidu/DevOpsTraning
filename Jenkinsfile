@@ -27,12 +27,12 @@ pipeline {
             }
         }
         stage ("Release") {
-            // Declare pipeline environment variables locally or at stage level
+            // testing credential helper method with secret text
             environment {
-                 SAMPLE_ENV = credentials("username:password")
+                 secret_text_example = credentials("rama_secret_text")
             }
             steps {
-               sh 'echo $SAMPLE_ENV'
+               sh 'echo $secret_text_example'
             }
         }
     }
