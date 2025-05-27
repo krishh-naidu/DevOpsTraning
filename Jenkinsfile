@@ -32,7 +32,7 @@ pipeline {
                  SAMPLE_ENV = credentials("simple-secret-text")
             }
             steps {
-               sh 'example --secret $SAMPLE_ENV'
+               sh 'echo $SAMPLE_ENV'
             }
         }
     }
