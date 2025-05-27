@@ -29,10 +29,13 @@ pipeline {
         stage ("Release") {
             // testing credential helper method with secret text
             environment {
-                 secret_text_example = credentials("rama_secret_text")
+                secret_text_example = credentials("rama_secret_text")
+                username_password_example = credentials ("rama_username_password") 
             }
             steps {
-               sh 'echo $secret_text_example'
+                sh 'echo $secret_text_example'
+                sh 'echo $username_password_example'
+                
             }
         }
     }
