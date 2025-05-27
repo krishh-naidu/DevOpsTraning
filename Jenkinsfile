@@ -29,7 +29,7 @@ pipeline {
         stage ("Release") {
             // Declare pipeline environment variables locally or at stage level
             environment {
-                 SAMPLE_ENV = credentials("simple-secret-text")
+                 SAMPLE_ENV = credentials("username/password")
             }
             steps {
                sh 'echo $SAMPLE_ENV'
