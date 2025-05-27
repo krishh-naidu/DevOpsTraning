@@ -7,11 +7,20 @@ pipeline {
     stages {
         stage ("Build") {
             environment {
-               local_env = "this is local environment variable"
+               build_local_env = "this is local environment variable from BUILD STAGE"
             }
             steps {
                 echo "$global_env"
-                echo "${local_env}"
+                echo "${build_local_env}"
+            }
+        }
+         stage ("Test") {
+            environment {
+               test_local_env = "this is local environment variable from TEST STAGE"
+            }
+            steps {
+                echo "$global_env"
+                echo "${environment.test_local_env}"
             }
         }
     }
