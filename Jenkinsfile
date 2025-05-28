@@ -31,7 +31,9 @@ pipeline {
                 echo "$params.TEST_CHOICE"
             }
             post{
-                echo "This block always runs after this stage."
+                always {
+                    echo "This block always runs after this stage."
+                }
             }
         }
         stage ("Test") {
