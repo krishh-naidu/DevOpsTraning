@@ -12,7 +12,7 @@ pipeline {
         stage ('Deploy'){
             when {
                 branch "main"
-                environment_name: 'DEPLOY_TO', value: 'production'
+                environment name: 'DEPLOY_TO', value: 'production'
             }
             steps{
                 echo "this is deployment stage"
