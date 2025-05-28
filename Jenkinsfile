@@ -17,8 +17,7 @@ pipeline {
     stages {
         stage ("Build") {
             when{
-                //equals(actual: currentBuild.number, expected: 1)
-                branch  "*/Jenkins_Training"
+                equals(actual: currentBuild.number, expected: 1)
             }
             // Declare pipeline environment variables locally or at stage level
             environment {
