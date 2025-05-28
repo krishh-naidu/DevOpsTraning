@@ -60,7 +60,7 @@ pipeline {
             }
         }
     }
-    // setting up post actions directive for each status
+    // setting up post actions directive for each status after stages sectuin
     post {
         always {
             echo "This block always runs."
