@@ -23,6 +23,12 @@ pipeline {
             steps {
                 echo "$global_env"
                 echo "${build_local_env}"
+                // we can disolay parameter values using params helper method
+                echo "${params.TEST_BOOLEAN}"
+                echo "$params.TEST_STRING"
+                echo "${params.TEST_TEXT}"
+                echo "$params.password"
+                echo "$params.choice"
             }
         }
         stage ("Test") {
