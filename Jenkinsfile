@@ -60,6 +60,7 @@ pipeline {
             }
         }
     }
+    // setting up post actions directive for each status
     post {
         always {
             echo "This block always runs."
