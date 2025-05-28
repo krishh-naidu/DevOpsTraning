@@ -16,6 +16,9 @@ pipeline {
 
     stages {
         stage ("Build") {
+            when{
+                equals(actual: currentBuild.number, expected: 1)
+            }
             // Declare pipeline environment variables locally or at stage level
             environment {
                build_local_env = "this is local environment variable from BUILD STAGE"
