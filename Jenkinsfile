@@ -27,8 +27,8 @@ pipeline {
                 echo "${params.TEST_BOOLEAN}"
                 echo "$params.TEST_STRING"
                 echo "${params.TEST_TEXT}"
-                echo "$params.password"
-                echo "$params.choice"
+                echo "$params.TEST_PASSWD"
+                echo "$params.TEST_CHOICE"
             }
         }
         stage ("Test") {
