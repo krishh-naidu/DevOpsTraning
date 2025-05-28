@@ -7,7 +7,7 @@ pipeline {
     // defining parameters  directive
     parameters {
         booleanParam (name: "TEST_BOOLEAN", defaultValue: true, description: "it represents true or false value")
-        string (name: "TEST_STRING", defaultValue: "enter single line value here", trip: true, description: "it allows only single line")
+        string (name: "TEST_STRING", defaultValue: "enter single line value here", trim: true, description: "it allows only single line")
         text (name: "TEST_TEXT", defaultValue: "enter multi line value here", description: "it allows multi lines")
         password (name: "TEST_PASSWD", defaultValue: "secret", description: "enter your password here")
         choice (name: "TEST_CHOICE", choices: ["production", "staging", "development"], description: "it allows multi choices")
