@@ -7,10 +7,12 @@ pipeline {
             }
         }
         stage ('Deploy'){
+
           input {
             message "Ready to deploy"
             ok "yes"
           }
+
           when {
               beforeAgent true
               branch "main"
