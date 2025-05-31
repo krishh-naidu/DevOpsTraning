@@ -11,6 +11,8 @@ pipeline {
           input {
             message "Ready to deploy"
             ok "yes"
+            submitter "ssbostan,admin,admins,managers"
+            submitterParameter "SUBMITTER_USERNAME"
           }
 
           when {
