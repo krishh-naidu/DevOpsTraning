@@ -9,7 +9,7 @@ pipeline {
         stage ('Deploy'){
          when {
               beforeAgent true
-              branch "Jenkins_Training"
+              branch "main"
           }
           steps{
           input (
