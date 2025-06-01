@@ -13,10 +13,10 @@ pipeline {
           }
           steps{
           input {
-                message "Ready to deploy?"
-                ok "Yes"
-                submitter "ssbostan,admin,admins,managers"
-                submitterParameter "SUBMITTER_USERNAME"
+                message: "Ready to deploy?"
+                ok: "Yes"
+                submitter: "ssbostan,admin,admins,managers"
+                submitterParameter: "SUBMITTER_USERNAME"
             }
               echo "this is deployment stage"
           }
