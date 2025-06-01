@@ -7,15 +7,15 @@ pipeline {
             }
         }
         stage ('Deploy'){
-          steps{
-          input(
+          input{
                     message: "Ready to continue?",
                     ok: "Yes",
                     submitter: "ssbostan"
-                    parameters (
+                    parameters {
                     string(name: "DEPLOY_ENV", defaultValue: "production")
-                )
-                )
+                }
+                }
+          steps{
               echo "this is deployment stage"
           }
       }
