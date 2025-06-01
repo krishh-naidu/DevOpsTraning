@@ -7,20 +7,18 @@ pipeline {
             }
         }
         stage ('Deploy'){
-
          when {
               beforeAgent true
               branch "main"
           }
           steps{
-              input {
-                    message "Ready to deploy"
-                    ok "yes"
-                    submitter "ssbostan,admin,admins,managers"
-                    submitterParameter "SUBMITTER_USERNAME"
+            input {
+                message "Ready to deploy"
+                ok "yes"
+                submitter "ssbostan,admin,admins,managers"
+                submitterParameter "SUBMITTER_USERNAME"
               }  
               echo "this is deployment stage"
-              
           }
       }
     }
