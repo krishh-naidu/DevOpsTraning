@@ -7,10 +7,6 @@ pipeline {
             }
         }
         stage ('Deploy'){
-         when {
-              beforeAgent true
-              branch "main"
-          }
           steps{
           input (
                 message: "Ready to continue?",
