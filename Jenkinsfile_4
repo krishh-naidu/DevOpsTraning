@@ -12,9 +12,9 @@ pipeline {
                     message: "Ready to continue?",
                     ok: "Yes",
                     submitter: "ssbostan"
-                    parameters {
+                    parameters (
                     string(name: "DEPLOY_ENV", defaultValue: "production")
-                }
+                )
                 )
               echo "this is deployment stage"
           }
