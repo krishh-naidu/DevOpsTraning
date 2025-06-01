@@ -8,9 +8,9 @@ pipeline {
         }
         stage ('Deploy'){
           input{
-                    message: "Ready to continue?",
-                    ok: "Yes",
-                    submitter: "ssbostan"
+                    message "Ready to continue?"
+                    ok "Yes"
+                    submitter "ssbostan"
                     parameters {
                     string(name: "DEPLOY_ENV", defaultValue: "production")
                 }
