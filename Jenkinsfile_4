@@ -13,13 +13,15 @@ pipeline {
               branch "main"
           }
           steps{
-              echo "this is deployment stage"
+
               input {
                 message "Ready to deploy"
                 ok "yes"
                 submitter "ssbostan,admin,admins,managers"
                 submitterParameter "SUBMITTER_USERNAME"
-              }
+              }  
+              echo "this is deployment stage"
+              
           }
       }
     }
