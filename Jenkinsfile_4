@@ -1,7 +1,7 @@
 pipeline {
     agent none
     triggers {
-        cron "0 * * * *"
+        pollSCM "*/10 * * * *"
     }
     stages{
         stage ('Build'){
