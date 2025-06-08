@@ -14,7 +14,7 @@ pipeline {
           echo pwd()
         }
         echo isUnix() ? "running on macos" : "running on windows"    
-        echo fileExists(/Users/raminehi/Desktop/Jenkins/Jenkins_Training/abc.txt)
+        echo fileExists("/Users/raminehi/Desktop/Jenkins/Jenkins_Training/abc.txt")
       }
     }
   }
