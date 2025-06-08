@@ -10,6 +10,7 @@ pipeline {
           echo pwd()
         }
         dir(pwd(tmp: true)){
+          echo "Inside the job tmp directory."
           echo pwd()
         }
         
