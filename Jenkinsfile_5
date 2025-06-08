@@ -6,6 +6,7 @@ pipeline {
       steps {
         echo " echo keyword is used to print message"
         dir ("Sameple") {
+          echo "It will print current directory"
           echo pwd()
         }
         
