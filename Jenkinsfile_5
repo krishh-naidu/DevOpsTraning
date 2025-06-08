@@ -9,7 +9,9 @@ pipeline {
           echo "It will print current directory"
           echo pwd()
         }
-        
+        dir(pwd(tmp: true)){
+          echo pwd()
+        }
         
       }
     }
