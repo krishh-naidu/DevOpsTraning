@@ -13,7 +13,7 @@ pipeline {
           echo "Inside the job tmp directory."
           echo pwd()
         }
-        
+        echo isUnix() ? "running on macos" : "running on windows"    
       }
     }
   }
