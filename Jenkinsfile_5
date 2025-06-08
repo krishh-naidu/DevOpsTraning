@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+
+  stages {
+    stage ("Test") {
+      steps {
+        echo " echo keyword is used to print message"
+        dir ("Sameple") {
+          echo pwd()
+        }
+        
+        
+      }
+    }
+  }
+}
