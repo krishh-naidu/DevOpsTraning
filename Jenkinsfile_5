@@ -22,10 +22,12 @@ pipeline {
           if (fileExists("sample")){
             echo "file found"
             echo readFile("sample")
+            // echo readFile(file: "sample", encoding: "Base64")
           }
           else {
             echo "file not found"
             writeFile(file: "sample", text: "Hello Jenkins!")
+            // writeFile(file: "sample", text: "base64 encoded binary data", encoding: "Base64")
           }
         }
       }
