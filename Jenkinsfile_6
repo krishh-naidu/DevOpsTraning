@@ -1,0 +1,17 @@
+pipeline {
+  agemt any
+
+  stages {
+   stage ("Clone GIT Repo"){
+     steps {
+       git(
+         url: "https://github.com/krishh-naidu/DevOpsTraning.git",
+         branch: "Jenkins_Training",
+         changelog: true,
+         poll: true
+         
+       )
+     }
+   } 
+  }
+}
