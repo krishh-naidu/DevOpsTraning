@@ -17,7 +17,7 @@ pipeline {
         // testing fileExists,readFile and writeFile
 
         script {
-          if fileExists("sample"){
+          if (fileExists("sample")){
             echo "file found"
             echo readFile("sample")
           }
