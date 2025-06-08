@@ -14,7 +14,18 @@ pipeline {
           echo pwd()
         }
         echo isUnix() ? "running on macos" : "running on windows"    
-        echo fileExists("/Users/raminehi/Desktop/Jenkins/Jenkins_Training/abc.txt")
+        // testing fileExists,readFile and writeFile
+
+        script {
+          if fileExists("sample"){
+            echo "file found"
+            echo readFile("sample")
+          }
+          else {
+            echo "file not found"
+            writeFile(file: "sample", text: "Hello Jenkins!")
+          }
+        }
       }
     }
   }
