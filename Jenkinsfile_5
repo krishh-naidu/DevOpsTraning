@@ -14,6 +14,7 @@ pipeline {
           echo pwd()
         }
         echo isUnix() ? "running on macos" : "running on windows"    
+        echo fileExists()
       }
     }
   }
