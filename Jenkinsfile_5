@@ -13,8 +13,10 @@ pipeline {
           echo "Inside the job tmp directory."
           echo pwd()
         }
+// testing isUnix()
         echo isUnix() ? "running on macos" : "running on windows"    
-        // testing fileExists,readFile and writeFile
+        
+// testing fileExists,readFile and writeFile
 
         script {
           if (fileExists("sample")){
