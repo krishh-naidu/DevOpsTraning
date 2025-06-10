@@ -1,5 +1,5 @@
 pipeline {
-  agemt any
+  agent any
 
   stages {
    stage ("Clone GIT Repo"){
