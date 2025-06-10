@@ -4,7 +4,7 @@ pipeline {
   stages {
    stage ("Clone GIT Repo"){
      steps {
-      dir("neptune") {
+      dir("Jenkins_Training") {
        git(
          url: "https://github.com/krishh-naidu/DevOpsTraning.git",
          branch: "Jenkins_Training",
